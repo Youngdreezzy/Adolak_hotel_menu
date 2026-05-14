@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADOLAK HOTEL RESTAURANT MENU</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .hero {
+      min-height: 350px;
+    
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('images/menu_bg.avif');
+      display: flex;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      letter-spacing: 1.2px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .hero-content img {
+        margin-bottom: -25px;
+    }
+
+    .menu-container {
+      max-width: 1200px;
+      margin: -60px auto 50px;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-wrapper {
+      background: white;
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #e67e22;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 60%;
+      height: 4px;
+      background: #e67e22;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      border-radius: 10px;
+    }
+
+    .menu-grid {
+      display: grid;
+      /* grid-template-columns: repeat(2, 1fr); */
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .menu-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .menu-content {
+      padding: 20px;
+    }
+
+    .menu-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .menu-top h3 {
+      font-size: 1.2rem;
+    }
+
+    .price {
+      background: #e67e22;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .menu-content p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .menu-wrapper {
+        padding: 25px;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+    
+
+
+    @media print {
+
+        body {
+            background: white;
+            padding: 0;
+        }
+
+        .hero {
+            min-height: 250px;
+        }
+
+        .menu-wrapper {
+            box-shadow: none;
+            border-radius: 0;
+            padding: 20px;
+        }
+
+        .menu-card {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .menu-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+
+
+        #scrollTopBtn {
+            display: none !important;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+        }
+
+    .menu-wrapper {
+    box-shadow: none;
+    }
+
+    .imglogo{
+  
+      height: 100px;
+      margin-right: 25px;
+      
+      
+    }
+
+
+   
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero" >
+    <div class="hero-content">
+      <h1> <img src="images/Adolak_Logo-removebg-preview.png" class="imglogo" alt="">ADOLAK HOTEL RESTAURANT MENU</h1>
+      <p>Fresh Meals • Premium Proteins • Chilled Drinks</p>
+    </div>
+  </section>
+
+  <div class="menu-container">
+    <div class="menu-wrapper">
+
+      <!-- FOOD SECTION -->
+      <h2 class="section-title">Foods</h2>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img src="images/IMG_5936.JPG" alt="Jollof Rice">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Jollof Rice</h3>
+              <span class="price">₦2,500</span>
+            </div>
+            <p>Smoky Nigerian jollof Rice.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/white_ricee.JPG" alt="White Rice">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>White Rice</h3>
+              <span class="price">₦2,000</span>
+            </div>
+            <p>White Rice.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/fried_rice.JPG" alt="Fried Rice">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Fried Rice</h3>
+              <span class="price">₦2,000</span>
+            </div>
+            <p>Rich grain, vibrant veggies and savory spice.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/white_basmati.JPG" alt="White Basmati Rice">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>White Basmati Rice</h3>
+              <span class="price">₦4,000</span>
+            </div>
+            <p> White Basmati Rice.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/fried_basmati.JPG" alt="Fried Basmati Rice">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Fried Basmati Rice</h3>
+              <span class="price">₦5,000</span>
+            </div>
+            <p>Long grains tossed and cooked to perfection</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/jollof_basmati.JPG" alt="Jollof Basmati Rice">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Jollof Basmati Rice</h3>
+              <span class="price">₦5,000</span>
+            </div>
+            <p>Jollof Basmati Rice</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/singapore.PNG" alt="Singapore Noodles">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Singapore Noodles</h3>
+              <span class="price">₦8,000</span>
+            </div>
+            <p>Singapore Noodles</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/noodles.WEBP" alt="Noodles">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3> Noodles</h3>
+              <span class="price">₦3,000</span>
+            </div>
+            <p>Noodles Only</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/spag_bolognese.JPG" alt="Bolognese">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3> Spagetti Bolognese</h3>
+              <span class="price">₦10,000</span>
+            </div>
+            <p>Spagetti Bolognese</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/white_spag.AVIF" alt="whiteSpag">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3> White Spagetti</h3>
+              <span class="price">₦2,000</span>
+            </div>
+            <p>White Spagetti</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/boilYam.PNG" alt="boiledyam">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Boiled Yam</h3>
+              <span class="price">₦3,000</span>
+            </div>
+            <p>Boiled Yam</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/friedYam.PNG" alt="Fried Yam">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Fried Yam</h3>
+              <span class="price">₦3,000</span>
+            </div>
+            <p>Fried Yam</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/frenchFries.GIF" alt="French Fries">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>French Fries</h3>
+              <span class="price">₦3,000</span>
+            </div>
+            <p>French Fries</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/eggsauce.JPG" alt="Egg Sauce">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Egg Sauce</h3>
+              <span class="price">₦2,000</span>
+            </div>
+            <p>Egg Sauce Only</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/fishsauce.JPG" alt="FishSauce">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Fish Sauce</h3>
+              <span class="price">₦2,000</span>
+            </div>
+            <p>Fish Sauce</p>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <!-- SWALLOW SECTION -->
+      <h2 class="section-title">Swallow</h2>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img src="images/amala.PNG" alt="Amala">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Amala</h3>
+              <span class="price">₦1,500</span>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/eba.JPG" alt="Eba">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Eba</h3>
+              <span class="price">₦1,500</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/semo:poundo.PNG" alt="Semovita">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Semovita</h3>
+              <span class="price">₦1,500</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/wheat.PNG" alt="Wheat">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Wheat</h3>
+              <span class="price">₦1,500</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/semo:poundo.PNG" alt="Poundo">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Poundo</h3>
+              <span class="price">₦2,000</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- SOUP SECTION -->
+      <h2 class="section-title">Soup</h2>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img src="images/egusi.JPG" alt="Egusi">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Egusi</h3>
+              <span class="price">₦2,000</span>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/Ogbono.JPG" alt="Ogbono">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Ogbono</h3>
+              <span class="price">₦2,000</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/Efo.JPG" alt="Efo">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Efo Riro</h3>
+              <span class="price">₦2,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/okroPrawn.JPG" alt="okroPrawn">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Mix Okro With Prawns</h3>
+              <span class="price">₦8,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/okro_shrimp.JPG" alt="OkroShrimp">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Mix Okro With Shrimps</h3>
+              <span class="price">₦8,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/sea_food.JPG" alt="SeafoodOkro">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Seafood Okro</h3>
+              <span class="price">₦17,000</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- PROTEIN SECTION -->
+      <h2 class="section-title">Proteins</h2>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img src="images/turkey.PNG" alt="Turkey">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Turkey</h3>
+              <span class="price">₦7,000</span>
+            </div>
+            <p>Spicy Fried Turkey.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/beef.PNG" alt="Beef">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Beef</h3>
+              <span class="price">₦6,000</span>
+            </div>
+            <p>Spicy Fried Beef.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/chickn.JPG" alt="Chicken">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Chicken</h3>
+              <span class="price">₦6,000</span>
+            </div>
+            <p>Fried chicken.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/goat.PNG" alt="Goatmeat">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Goat Meat</h3>
+              <span class="price">₦7,000</span>
+            </div>
+            <p>Goat Meat.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/gizzard.JPG" alt="Gizzard">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Gizzard</h3>
+              <span class="price">₦7,000</span>
+            </div>
+            <p>Fried and well prepared peppered gizzard.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/titus.JPG" alt="Titus">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Titus</h3>
+              <span class="price">₦7,000</span>
+            </div>
+            <p>Titus Fish.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/pep_chicken.JPG" alt="Peppered Chicken">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Peppered Chicken</h3>
+              <span class="price">₦6,000</span>
+            </div>
+            <p>Peppered Chicken.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/goat_meat.JPG" alt="Peppered Goatmeat">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Peppered Goatmeat</h3>
+              <span class="price">₦7,000</span>
+            </div>
+            <p>Well prepared peppered goat meat.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/pep_beef.PNG" alt="Peppered Beef">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Peppered Beef</h3>
+              <span class="price">₦6,000</span>
+            </div>
+            <p>Well prepared peppered beef.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/Cat-Fish-Pepper-Soup-naija-home-food-Lagos-Abuja-personal-chef-Ama-Cuisine.jpg" alt="Catfishlarge">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Catfish Peppersoup/L</h3>
+              <span class="price">₦30,000</span>
+            </div>
+            <p>Large Catfish Peppersoup.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/Cat-Fish-Pepper-Soup-naija-home-food-Lagos-Abuja-personal-chef-Ama-Cuisine.jpg" alt="CatfishBig">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Catfish Peppersoup/B</h3>
+              <span class="price">₦20,000</span>
+            </div>
+            <p>Big Catfish Peppersoup.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/Cat-Fish-Pepper-Soup-naija-home-food-Lagos-Abuja-personal-chef-Ama-Cuisine.jpg" alt="catfishMedium">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Catfish Peppersoup/M</h3>
+              <span class="price">₦15,000</span>
+            </div>
+            <p>Medium Catfish Peppersoup.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/omelette.JPG" alt="Omelette">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Omelette</h3>
+              <span class="price">₦2,000</span>
+            </div>
+            <p>Omelette.</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/pep_croaker.JPG" alt="CroakerPeppersoup">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Croaker Peppersoup</h3>
+              <span class="price">₦15,000</span>
+            </div>
+            <p>Croaker Peppersoup.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DRINK SECTION -->
+      <h2 class="section-title">Drinks</h2>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img src="images/hollandia.JPG" alt="Hollandia">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Hollandia Yoghurt</h3>
+              <span class="price">₦3,500</span>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/chiv.JPG" alt="Chivita">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Chivita</h3>
+              <span class="price">₦3,000</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/fayrouz.PNG" alt="Fayrouz">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Fayrouz</h3>
+              <span class="price">₦1,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/cokee.WEBP" alt="Coke">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Cocacola</h3>
+              <span class="price">₦1,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/fanta.JPG" alt="fanta">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Fanta</h3>
+              <span class="price">₦1,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/malta_G.JPG" alt="malta">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Malta Guinness</h3>
+              <span class="price">₦1,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="images/eva.WEBP" alt="eva">
+          <div class="menu-content">
+            <div class="menu-top">
+              <h3>Water</h3>
+              <span class="price">₦1,000</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Adolak International Hotel Nigeria Ltd • Designed by Hollatech</p>
+  </footer>
+
+<!-- SCROLL TO TOP BUTTON -->
+<button id="scrollTopBtn">
+  ↑
+</button>
+
+<style>
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #e67e22;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 999;
+    transition: 0.3s ease;
+  }
+
+  #scrollTopBtn:hover {
+    transform: translateY(-5px);
+    background: #cf711f;
+  }
+</style>
+
+<script>
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+
+  scrollBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
+```
+
+
