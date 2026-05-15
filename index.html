@@ -221,9 +221,121 @@
     }
 
 
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      z-index: 1000;
+      margin-bottom: 25px;
+      background-color: #666;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #e67e22;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #e67e22;
+    }
+
+    /* MOBILE BUTTON */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1100;
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 768px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 25px;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      }
+
+      .navbar.active {
+        right: 0;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+      }
+
+      .nav-links li a {
+        font-size: 1.1rem;
+      }
+
+    }
+
+
+
    
   </style>
 </head>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+
+    function closeMenu() {
+      document.getElementById("navbar").classList.remove("active");
+    }
+
+  </script>
+
 <body>
 
   <!-- HERO SECTION -->
@@ -234,11 +346,34 @@
     </div>
   </section>
 
+
+
+  <!-- NAVIGATION -->
+  <button class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </button>
+
+  <nav class="navbar" id="navbar">
+
+    <div class="nav-logo">
+      Menu
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#foods" onclick="closeMenu()">🍛 Foods</a></li>
+      <li><a href="#proteins" onclick="closeMenu()">🍖 Proteins</a></li>
+      <li><a href="#soups" onclick="closeMenu()">🍲 Soups</a></li>
+      <li><a href="#drinks" onclick="closeMenu()">🥤 Drinks</a></li>
+    </ul>
+
+  </nav>
+
+
   <div class="menu-container">
     <div class="menu-wrapper">
 
       <!-- FOOD SECTION -->
-      <h2 class="section-title">Foods</h2>
+      <h2 class="section-title" id="foods">Foods</h2>
 
       <div class="menu-grid">
 
@@ -372,7 +507,7 @@
             </div>
             <p>Fried Yam</p>
           </div>
-        </div>
+        </div> 
 
         <div class="menu-card">
           <img src="images/frenchFries.GIF" alt="French Fries">
@@ -472,7 +607,7 @@
 
 
       <!-- SOUP SECTION -->
-      <h2 class="section-title">Soup</h2>
+      <h2 class="section-title" id="soups">Soup</h2>
 
       <div class="menu-grid">
 
@@ -542,7 +677,7 @@
 
 
       <!-- PROTEIN SECTION -->
-      <h2 class="section-title">Proteins</h2>
+      <h2 class="section-title" id="proteins">Proteins</h2>
 
       <div class="menu-grid">
 
@@ -703,7 +838,7 @@
       </div>
 
       <!-- DRINK SECTION -->
-      <h2 class="section-title">Drinks</h2>
+      <h2 class="section-title" id="drinks">Drinks</h2>
 
       <div class="menu-grid">
 
@@ -714,7 +849,6 @@
               <h3>Hollandia Yoghurt</h3>
               <span class="price">₦3,500</span>
             </div>
-            
           </div>
         </div>
 
@@ -725,7 +859,6 @@
               <h3>Chivita</h3>
               <span class="price">₦3,000</span>
             </div>
-
           </div>
         </div>
 
