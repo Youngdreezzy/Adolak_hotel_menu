@@ -3,369 +3,438 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADOLAK HOTEL RESTAURANT MENU</title>
+  <title>ADOLAK HOTEL MENU</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
-      margin: 0;
-      padding: 20px;
-      
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .hero {
-      min-height: 350px;
-      background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('images/menu_bg.png');
-      display: flex;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 40px 20px;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
 
-    .hero-content h1 {
-      font-size: 3.5rem;
-      margin-bottom: 15px;
-      letter-spacing: 1.2px;
-    }
+/* HERO */
+.hero {
+  min-height: 350px;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('images/menu_bg.png');
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
 
-    .hero-content p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 1.2px;
+}
 
-    .hero-content img {
-        margin-bottom: -25px;
-    }
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
 
-    .menu-container {
-      max-width: 1200px;
-      margin: -17px auto 50px;
-      padding: 20px;
-      position: relative;
-      z-index: 10;
-      
-    }
+.hero-content img {
+  margin-bottom: -25px;
+}
 
-    .menu-wrapper {
-      background: white;
-      border-radius: 25px;
-      padding: 40px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
-    }
+.imglogo {
+  height: 100px;
+  margin-right: 25px;
+}
 
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #e67e22;
-      position: relative;
-      display: inline-block;
-    }
+/* MENU CONTAINER */
+.menu-container {
+  max-width: 1200px;
+  margin: -17px auto 50px;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
 
-    .section-title::after {
-      content: '';
-      width: 60%;
-      height: 4px;
-      background: #e67e22;
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      border-radius: 10px;
-    }
+.menu-wrapper {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: none;
+}
 
-    .menu-grid {
-      display: grid;
-      /* grid-template-columns: repeat(2, 1fr); */
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      margin-bottom: 60px;
-    }
 
-    .menu-card {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-    }
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #e67e22;
+  position: relative;
+  display: inline-block;
+}
 
-    .menu-card:hover {
-      transform: translateY(-8px);
-    }
+.section-title::after {
+  content: '';
+  width: 60%;
+  height: 4px;
+  background: #e67e22;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 10px;
+}
 
-    .menu-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
 
-    .menu-content {
-      padding: 20px;
-    }
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
 
-    .menu-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
 
-    .menu-top h3 {
-      font-size: 1.2rem;
-    }
+.menu-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
 
-    .price {
-      background: #e67e22;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
+.menu-card:hover {
+  transform: translateY(-8px);
+}
 
-    .menu-content p {
-      color: #666;
-      font-size: 0.95rem;
-    }
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #111;
-      color: white;
-      margin-top: 40px;
-    }
 
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
+.menu-content {
+  padding: 20px;
+}
 
-      .menu-wrapper {
-        padding: 25px;
-      }
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
-      .section-title {
-        font-size: 1.7rem;
-      }
-    }
+.menu-top h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.price {
+  background: #e67e22;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.menu-content p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  color: white;
+  margin-top: 40px;
+}
+
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  z-index: 3000;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #e67e22;
+}
+
+/* MOBILE BUTTON */
+.menu-toggle {
+  display: none;
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 2px;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    padding: 12px 15px;
+    position: sticky;
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 230px;
+    background: #666;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     
+    display: none;
+  }
 
+  .nav-links.active {
+    display: flex;
+  }
 
-    @media print {
+  .nav-links li {
+    width: 100%;
+  }
 
-        body {
-            background: white;
-            padding: 0;
-        }
+  .nav-links li a {
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    color: white;
+  }
 
-        .hero {
-            min-height: 250px;
-        }
+  /* HERO */
+  .hero {
+    min-height: 260px;
+    padding: 30px 15px;
+  }
 
-        .menu-wrapper {
-            box-shadow: none;
-            border-radius: 0;
-            padding: 20px;
-        }
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
 
-        .menu-card {
-            break-inside: avoid;
-            page-break-inside: avoid;
-        }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
 
-        .menu-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+  .imglogo {
+    height: 75px;
+    margin-right: 25px;
+    margin-bottom: 150px;
+  }
 
+  /* MENU WRAPPER */
+  .menu-wrapper {
+    padding: 20px;
+    border-radius: 18px;
+  }
 
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
 
-        #scrollTopBtn {
-            display: none !important;
-        }
+  /* GRID */
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
 
-        footer {
-            margin-top: 20px;
-        }
-        }
+  /* CARD */
+  .menu-card {
+    border-radius: 14px;
+  }
 
-    .menu-wrapper {
+  .menu-card img {
+    height: 140px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .menu-content {
+    padding: 12px;
+  }
+
+  .menu-top {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .menu-top h3 {
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+
+  .price {
+    font-size: 0.58rem;
+    padding: 4px 7px;
+    border-radius: 14px;
+  }
+
+  .menu-content p {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  footer {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .menu-grid {
+    gap: 10px;
+  }
+
+  .menu-card img {
+    height: 120px;
+  }
+
+  .menu-top h3 {
+    font-size: 0.72rem;
+  }
+
+  .price {
+    font-size: 0.52rem;
+  }
+
+  .menu-content p {
+    font-size: 0.68rem;
+  }
+  .nav-links.active {
+  display: flex;
+}
+}
+
+/* PRINT */
+@media print {
+
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .hero {
+    min-height: 250px;
+  }
+
+  .menu-wrapper {
     box-shadow: none;
-    }
+    border-radius: 0;
+    padding: 20px;
+  }
 
-    .imglogo{
-  
-      height: 100px;
-      margin-right: 25px;
-      
-      
-    }
+  .menu-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  #scrollTopBtn,
+  .navbar,
+  .menu-toggle {
+    display: none !important;
+  }
 
+  footer {
+    margin-top: 20px;
+  }
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+/* ANIMATION */
+@keyframes scroll {
 
-    /* NAVBAR */
-    .navbar {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      background: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      z-index: 1000;
-      margin-bottom: 25px;
-      background-color: #666;
-      margin-bottom: 0;
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    .nav-logo {
-      font-size: 1.2rem;
-      font-weight: 700;
-      /* color: #e67e22; */
-      color: whitesmoke;
-      
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-
-    .nav-links li a {
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-      transition: 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-      color: #e67e22;
-    }
-
-    /* MOBILE BUTTON */
-    .menu-toggle {
-      display: none;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1100;
-      background: #e67e22;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    /* MOBILE VIEW */
-    @media (max-width: 768px) {
-      .menu-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .menu-card {
-        width: 50%;           /* two per row */
-        box-sizing: border-box;
-        padding: 8px;         /* optional spacing */
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .navbar {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 250px;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 80px 25px;
-        transition: 0.4s ease;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        
-      }
-
-      .navbar.active {
-        right: 0;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        width: 100%;
-        gap: 25px;
-        
-      }
-
-      .nav-links li a {
-        font-size: 1.1rem;
-      }
-
-    }
-
-
-      .ticker-wrap{
-          position: sticky;
-          top: 60px;
-
-          width: 100%;
-          overflow: hidden;
-          background: #111;
-          padding: 12px 0;
-
-          z-index: 999;
-      }
-
-      .ticker{
-          display: inline-block;
-          white-space: nowrap;
-          color: red;
-          font-size: 18px;
-
-          padding-left: 100%;
-
-          animation: scroll 12s linear infinite;
-      }
-
-      @keyframes scroll{
-          0%{
-              transform: translateX(0);
-          }
-
-          100%{
-              transform: translateX(-100%);
-          }
-      }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
    
   </style>
@@ -377,24 +446,12 @@
 </head>
 
 
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("navbar").classList.toggle("active");
-    }
-
-    function closeMenu() {
-      document.getElementById("navbar").classList.remove("active");
-    }
-
-  </script>
-
 <body>
 
   <!-- HERO SECTION -->
   <section class="hero" >
     <div class="hero-content">
-      <h1> <img src="images/Adolak_Logo-removebg-preview.png" class="imglogo" alt="">ADOLAK HOTEL RESTAURANT MENU</h1>
+      <h1> <img src="images/Adolak_Logo-removebg-preview.png" class="imglogo" alt="">ADOLAK HOTEL MENU</h1>
       <p>Fresh Meals • Premium Proteins • Chilled Drinks</p>
     </div>
   </section>
@@ -402,15 +459,17 @@
 
 
   <!-- NAVIGATION -->
-  <button class="menu-toggle" onclick="toggleMenu()">
-    ☰
-  </button>
+
 
   <nav class="navbar" id="navbar">
 
     <div class="nav-logo">
-      Adolak Hotel Menu
+      Menu List
     </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+      ☰
+    </button>
 
     <ul class="nav-links">
       <li><a href="#foods" onclick="closeMenu()">🍛 Foods</a></li>
@@ -422,11 +481,7 @@
 
   </nav>
 
-  <div class="ticker-wrap">
-    <div class="ticker">
-      Fresh Meals • Premium Proteins • Chilled Drinks
-    </div>
-  </div>
+
 
 
   <div class="menu-container">
@@ -669,7 +724,7 @@
         </div>
 
         <div class="menu-card">
-          <img src="images/semo:poundo.PNG" alt="Semovita">
+          <img src="images/semopoundo.PNG" alt="Semovita">
           <div class="menu-content">
             <div class="menu-top">
               <h3>Semovita</h3>
@@ -689,7 +744,7 @@
         </div>
 
         <div class="menu-card">
-          <img src="images/semo:poundo.PNG" alt="Poundo">
+          <img src="images/semopoundo.PNG" alt="Poundo">
           <div class="menu-content">
             <div class="menu-top">
               <h3>Poundo</h3>
@@ -985,7 +1040,7 @@
           <img src="images/Cat-Fish-Pepper-Soup-naija-home-food-Lagos-Abuja-personal-chef-Ama-Cuisine.jpg" alt="Catfishlarge">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Catfish Peppersoup/L</h3>
+              <h3>Catfish Peppersoup</h3>
               <span class="price">₦30,000</span>
             </div>
             <p>Large Catfish Peppersoup.</p>
@@ -996,7 +1051,7 @@
           <img src="images/Cat-Fish-Pepper-Soup-naija-home-food-Lagos-Abuja-personal-chef-Ama-Cuisine.jpg" alt="CatfishBig">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Catfish Peppersoup/B</h3>
+              <h3>Catfish Peppersoup</h3>
               <span class="price">₦20,000</span>
             </div>
             <p>Big Catfish Peppersoup.</p>
@@ -1007,7 +1062,7 @@
           <img src="images/Cat-Fish-Pepper-Soup-naija-home-food-Lagos-Abuja-personal-chef-Ama-Cuisine.jpg" alt="catfishMedium">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Catfish Peppersoup/M</h3>
+              <h3>Catfish Peppersoup</h3>
               <span class="price">₦15,000</span>
             </div>
             <p>Medium Catfish Peppersoup.</p>
@@ -1375,7 +1430,7 @@
           <img src="images/alcohol/martelXo.jpeg" alt="martelXo">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Martel XO</h3>
+              <h3>Martel XO Cognac</h3>
               <span class="price">₦400,000</span>
             </div>
           </div>
@@ -1385,7 +1440,7 @@
           <img src="images/alcohol/martswift.jpeg" alt="martelswift">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Martel Blue Swift</h3>
+              <h3>Martel Blue Swift Cognac</h3>
               <span class="price">₦150,000</span>
             </div>
           </div>
@@ -1395,7 +1450,7 @@
           <img src="images/alcohol/martelVs.jpeg" alt="martelvs">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Martel VS</h3>
+              <h3>Martel VS Cognac</h3>
               <span class="price">₦75,000</span>
             </div>
           </div>
@@ -1405,7 +1460,7 @@
           <img src="images/alcohol/donjulioo.jpeg" alt="Donjulio">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Don Julio Blanco</h3>
+              <h3>Don Julio Tequila</h3>
               <span class="price">₦600,000</span>
             </div>
           </div>
@@ -1415,7 +1470,7 @@
           <img src="images/alcohol/belairerose.jpeg" alt="BelaireR">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Belaire Rose</h3>
+              <h3>Belaire Rose Sparkling Wine</h3>
               <span class="price">₦90,000</span>
             </div>
           </div>
@@ -1425,7 +1480,7 @@
           <img src="images/alcohol/moet.jpeg" alt="MoetR">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Moet Rose</h3>
+              <h3>Moet Rose </h3>
               <span class="price">₦130,000</span>
             </div>
           </div>
@@ -1575,7 +1630,7 @@
           <img src="images/alcohol/bestwhisky.JPG" alt="bestw">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Best Whisky</h3>
+              <h3>Best Classic Whisky</h3>
               <span class="price">₦20,000</span>
             </div>
           </div>
@@ -1585,7 +1640,7 @@
           <img src="images/alcohol/bestcream.JPG" alt="bestc">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Best Cream</h3>
+              <h3>Best Cream Liqueur</h3>
               <span class="price">₦10,000</span>
             </div>
           </div>
@@ -1595,7 +1650,7 @@
           <img src="images/alcohol/fourcousin.PNG" alt="fourcousin">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Four Cousin</h3>
+              <h3>Four Cousins Wine</h3>
               <span class="price">₦20,000</span>
             </div>
           </div>
@@ -1605,7 +1660,7 @@
           <img src="images/alcohol/carloRossie.JPG" alt="carlo">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Carlo Rossie</h3>
+              <h3>Carlo Rossie Table Wine</h3>
               <span class="price">₦20,000</span>
             </div>
           </div>
@@ -1625,7 +1680,7 @@
           <img src="images/alcohol/williamL.jpeg" alt="william">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>William Lawson</h3>
+              <h3>William Lawson's Whisky</h3>
               <span class="price">₦30,000</span>
             </div>
           </div>
@@ -1635,7 +1690,7 @@
           <img src="images/alcohol/jagameifter.jpeg" alt="jerger">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Jagermeifter</h3>
+              <h3>Jager <br> meifter Liqueur</h3>
               <span class="price">₦30,000</span>
             </div>
           </div>
@@ -1645,7 +1700,7 @@
           <img src="images/alcohol/jackdaniel.JPG" alt="jack">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Jack Daniel</h3>
+              <h3>Jack Daniel Whisky</h3>
               <span class="price">₦45,000</span>
             </div>
           </div>
@@ -1655,7 +1710,7 @@
           <img src="images/alcohol/dusse.jpeg" alt="dusse">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Dusse</h3>
+              <h3>Dusse Cognac</h3>
               <span class="price">₦90,000</span>
             </div>
           </div>
@@ -1675,7 +1730,7 @@
           <img src="images/alcohol/martini.JPG" alt="martini">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Martini Rose</h3>
+              <h3>Martini Rose Wine</h3>
               <span class="price">₦30,000</span>
             </div>
           </div>
@@ -1712,10 +1767,10 @@
         </div>
 
         <div class="menu-card">
-          <img src="images/alcohol/massimo.PNG" alt="Massimo">
+          <img src="images/alcohol/massimoWine 2.jpeg" alt="Massimo">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Massimo</h3>
+              <h3>Massimo Red Wine</h3>
               <span class="price">₦20,000</span>
             </div>
           </div>
@@ -1765,7 +1820,7 @@
           <img src="images/alcohol/bombay.JPG" alt="Bombay">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Bombay</h3>
+              <h3>Bombay Saphire</h3>
               <span class="price">₦40,000</span>
             </div>
           </div>
@@ -1775,7 +1830,7 @@
           <img src="images/alcohol/escudo.JPG" alt="Escudo">
           <div class="menu-content">
             <div class="menu-top">
-              <h3>Escudo Rojo</h3>
+              <h3>Escudo Rojo Wine</h3>
               <span class="price">₦40,000</span>
             </div>
           </div>
@@ -1788,7 +1843,7 @@
   </div>
 
   <footer>
-    <p>© 2026 Adolak International Hotel Nigeria Ltd • Designed by Hollatech 07065915797</p>
+    <p>© 2026 Adolak International Hotel Nigeria Ltd </p> <p class="right">Designed by Hollatech 07065915797</p>
   </footer>
 
 <!-- SCROLL TO TOP BUTTON -->
@@ -1797,6 +1852,10 @@
 </button>
 
 <style>
+  .right {
+    font-size: 7px;
+  }
+
   #scrollTopBtn {
     position: fixed;
     bottom: 25px;
@@ -1822,10 +1881,23 @@
 </style>
 
 <script>
+  function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+  }
+
+  function closeMenu() {
+    document.querySelector(".nav-links").classList.remove("active");
+  }
+</script>
+
+<script>
   const scrollBtn = document.getElementById("scrollTopBtn");
 
   window.onscroll = function () {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
       scrollBtn.style.display = "block";
     } else {
       scrollBtn.style.display = "none";
@@ -1842,6 +1914,6 @@
 
 </body>
 </html>
-```
+
 
 
